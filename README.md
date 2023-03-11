@@ -1,25 +1,22 @@
 # template.deno.land
 
-Template repository for immediate deployment of Deno projects
+Deno のテンプレートリポジトリ
 
 ---
 
-[Install Deno](https://github.com/denoland/deno#install)
-
-1. Go to [code](https://github.com/m2en/template.deno.land) page
-2. Click on **use this template**
-3. Enjoy coding 🙂
+[最初に Deno をインストールしましょう。](https://github.com/denoland/deno#install)
 
 ----
 
-Deno Tasks are like scripts available in `deno task`
+Deno には `deno task` という機能があります。
 
-It is the same as `npm run` or something like that.
+Node.js の `script` のようなものです。
 
 ```json
   "tasks": {
     "start": "deno run src/mod.ts",
     "dev": "deno run --watch src/mod.ts",
+    "compile": "deno compile --output=./target/app src/mod.ts",
     "fmt": "deno fmt --watch src/",
     "fmt:check": "deno fmt --check",
     "lint": "deno lint",
@@ -29,19 +26,21 @@ It is the same as `npm run` or something like that.
 ```
 
 - `start`: `deno task start`
-  - Run `src/mod.ts`
+  - `src/mod.ts` を実行します。
 - `dev`: `deno task dev`
-  - Run `src/mod.ts` (Development Mode)
-  - Re-run each time the file is updated
+  - `src/mod.ts` を開発モードで実行します。
+  - ファイルが更新されると自動でリフレッシュされます。
+- `compile`: `deno task compile`
+  - `./target` 配下に実行可能ファイルを生成します。
 - `fmt`: `deno task fmt`
-  - Run **deno fmt**
-  - Re-run each time the file is updated
+  - **deno fmt** を実行します。
+  - ファイルが更新されると自動でリフレッシュされます。
 - `fmt:check`: `deno task fmt:check`
-  - Run **deno fmt** (check mode)
+  - **deno fmt** をチェックモードで実行します。
 - `lint`: `deno task lint`
-  - Run **deno lint**
+  - **deno lint** を実行します。
 - `lint:json`: `deno task lint:json`
-  - Run **deno lint** (json mode)
-    - Execution results are output as JSON
+  - **deno lint** を実行します。
+  - lintの結果をJSON方式で吐き出します。
 - `cache`: `deno task cache`
-  - Perform dependency caching for deps.ts
+  - `deps.ts` の依存関係をキャッシュします。
