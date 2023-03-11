@@ -28,6 +28,7 @@
   "tasks": {
     "start": "deno run src/mod.ts",
     "dev": "deno run --watch src/mod.ts",
+    "compile": "deno compile --output=./target/app src/mod.ts",
     "fmt": "deno fmt --watch src/",
     "fmt:check": "deno fmt --check",
     "lint": "deno lint",
